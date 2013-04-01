@@ -3,7 +3,8 @@ Testing our YSOVAR codes
 We have generated artifical csv files that have the same format (at at
 least a very similar one) to the csv files extracted from the YSOVAR2
 database.
-The purpose of this excercise is
+The purpose of this excercise is to 
+
 - test that our code works correctly
 - compare our python code to Maria's IDL code
 
