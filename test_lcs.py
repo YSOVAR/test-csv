@@ -91,8 +91,6 @@ add_source(tab, t50, 11. + random(50), 0.1+np.zeros(50), -2501, 'IRAC2')
 add_source(tab, t50, 12. + np.linspace(0, 3) * 0.632, 0.1+np.zeros(50), -2502, 'IRAC1')
 add_source(tab, t50, 11. + np.linspace(0, 3) * 0.53 , 0.1+np.zeros(50), -2502, 'IRAC2')
 
-add_source(tab, t50, 12. + np.linspace(-1,1), 0.1+np.zeros(50), -2500, 'IRAC1')
-add_source(tab, t50, 11. + np.linspace(1,-1), 0.1+np.zeros(50), -2500, 'IRAC2')
 
 
 ### testing Stetson
