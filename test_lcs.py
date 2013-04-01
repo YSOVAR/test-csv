@@ -70,12 +70,12 @@ add_source(tab, t100, np.sin(t100/5*2*np.pi) + random(100)*10., 10.+np.zeros_lik
 ### testing multiband lc merging
 add_source(tab, t50, 12.+ random(50), random(50), -2000, 'IRAC1')
 t_2000 = t50
-t_2000[:25] = t50[:25] - 0.06 - random(25)/0.5
-t_2000[25:] = t50[25:] + 0.06 + random(25)/0.5
+t_2000[:25] = t50[:25] - 0.06 - random(25)*0.4
+t_2000[25:] = t50[25:] + 0.06 + random(25)*0.3
 add_source(tab, t_2000, 12. + random(50), random(50), -2000, 'IRAC2')
 
 add_source(tab, t50, 12.+ random(50), random(50), -2001, 'IRAC1')
-add_source(tab, t50 + random(50)/0.01, 12.+ random(50), random(50), -2001, 'IRAC2')
+add_source(tab, t50 + (random(50)*0.02)-0.01, 12.+ random(50), random(50), -2001, 'IRAC2')
 
 add_source(tab, t50, 12.+ random(50), random(50), -2002, 'IRAC1')
 add_source(tab, t50 + np.linspace(-0.049, +0.049), 12.+ random(50), random(50), -2002, 'IRAC2')

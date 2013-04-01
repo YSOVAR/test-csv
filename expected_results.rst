@@ -59,13 +59,13 @@ simple lightcurves
 ^^^^^^^^^^^^^^^^^^
 (5 entries)
 - number of entries = 5 in the band chosen
-- max = 12
-- min = 12 
+- max = 13
+- min = 11 
 - median = 12
 - weighted mean = 12
 - standard deviation = 1/sqrt(2) 
 - median absolute devitation = 0.5
-- chi^2 to mean = 15.81
+- reduced chi^2 to mean = 62.5
 
 Source number band  lightcurve  
 ============= ===== ==================
@@ -115,5 +115,5 @@ And now the Stetson index
 
 Source number Stetson index
 ============= =============
--2700         0.0000
--2701         1.0102
+-2700           0.00
+-2701         101.02
