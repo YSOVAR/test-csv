@@ -67,10 +67,10 @@ simple lightcurves
 - median absolute devitation = 0.5
 - reduced chi^2 to mean = 62.5
 
-Source number band  lightcurve  
-============= ===== ==================
--1002         IRAC1 linear brightening
--1003         IRAC2 linear brightening
+    Source number band  lightcurve  
+    ============= ===== ==================
+    -1002         IRAC1 linear brightening
+    -1003         IRAC2 linear brightening
 
 Periodicity
 -----------
