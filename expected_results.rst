@@ -36,9 +36,14 @@ statistics we want to verify there.
 
 One-color statistics
 --------------------
+We generated several very short and simple lightcurves for different sources,
+that have entries in one band only.
 
 constant lightcurves
 ^^^^^^^^^^^^^^^^^^^^
+These are two lightcurves that have identical entires, one of them tests the IRAC1 channel,
+the other one the IRAC2 channel.
+The followinf statistics should be compared:
 
 - number of entries = 5 in the band chosen
 - max = 12
@@ -59,6 +64,8 @@ Source number band  lightcurve
 
 simple lightcurves
 ^^^^^^^^^^^^^^^^^^
+These two lightcurves have identical entries again.
+The following statistics should be compared:
 
 - number of entries = 5 in the band chosen
 - max = 13
