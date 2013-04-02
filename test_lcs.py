@@ -81,7 +81,7 @@ add_source(tab, t50, 12.+ random(50), random(50), -2002, 'IRAC1')
 add_source(tab, t50 + np.linspace(-0.049, +0.049), 12.+ random(50), random(50), -2002, 'IRAC2')
 
 ### testing CMDs
-add_source(tab, t50, 12. + np.linspace(-1,1), 0.1+np.zeros(50), -2500, 'IRAC1')
+add_source(tab, t50, 12. + np.zeros(50), 0.1+np.zeros(50), -2500, 'IRAC1')
 add_source(tab, t50, 11. + np.linspace(1,-1), 0.1+np.zeros(50), -2500, 'IRAC2')
 
 add_source(tab, t50, 12. + random(50), 0.1+np.zeros(50), -2501, 'IRAC1')
@@ -112,3 +112,4 @@ with open(sys.argv[1], 'wb') as csvfile:
     writer.writerow(tab.colnames)
     for i in range(len(tab)):
         writer.writerow(tab[i])
+
