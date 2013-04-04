@@ -79,7 +79,7 @@ t_2000[25:] = t50[25:] + 0.06 + random(25)*0.3
 add_source(tab, t_2000, 12. + random(50), random(50), -2000, 'IRAC2')
 
 add_source(tab, t50, 12.+ random(50), random(50), -2001, 'IRAC1')
-add_source(tab, t50 + (random(50)*0.02)-0.01, 12.+ random(50), random(50), -2001, 'IRAC2')
+add_source(tab, t50 + (random(50)*0.16)-0.01, 12.+ random(50), random(50), -2001, 'IRAC2')
 
 add_source(tab, t50, 12.+ random(50), random(50), -2002, 'IRAC1')
 add_source(tab, t50 + np.linspace(-0.049, +0.049), 12.+ random(50), random(50), -2002, 'IRAC2')
