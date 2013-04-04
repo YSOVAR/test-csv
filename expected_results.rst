@@ -92,7 +92,7 @@ The following statistics should be compared:
 - min = 11 
 - median = 12
 - weighted mean = 12
-- standard deviation = sqrt(2.25)/6 = 0.6455
+- standard deviation = 1./sqrt(2) = 0.7071 (taking dof = 1)
 - median absolute devitation = 0.5
 - reduced chi^2 to mean = 50.0
 
@@ -126,15 +126,15 @@ Merging lightcurves with data in different bands
 The following lightcurves have different observation times in IRAC1
 and IRAC2 (e.g. IRAC1 before IRAC2, IRAC1 after IRAC2). The table
 gives the expected number of datapoints where photometry for IRAC1 and
-IRAC2 exisits within 0.01 days or 0.05 days.
+IRAC2 exisits within 12 minutes, 0.01 days, or 0.05 days.
 
-============= ========= =========
-Source number 0.01 days 0.05 days
-============= ========= =========
--2000         none      none
--2001         50        50
--2002         10        50
-============= ========= =========
+============= ========= ========= =========
+Source number 12 min    0.01 days 0.05 days
+============= ========= ========= =========
+-2000         none      none      none
+-2001         50        50        50
+-2002         8         10        50
+============= ========= ========= =========
 
 Two-color statistics
 --------------------
