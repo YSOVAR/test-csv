@@ -94,13 +94,27 @@ add_source(tab, t50, 11. + np.linspace(0, 3) * 0.53 , 0.1+np.zeros(50), -2502, '
 
 
 ### testing Stetson
-add_source(tab, t50, 12. + np.linspace(-1,1), 0.1+np.zeros(50), -2700, 'IRAC1')
+add_source(tab, t50, 12. + np.zeros(50), 0.1+np.zeros(50), -2700, 'IRAC1')
 add_source(tab, t50, 11. + np.linspace(1,-1), 0.1+np.zeros(50), -2700, 'IRAC2')
+
+mags = np.linspace(0,1)
+add_source(tab, t50, 12. + mags, 0.1 + np.zeros(50), -2701, 'IRAC1')
+mags[:25] = np.linspace(0,1, num=25)
+mags[25:] = np.linspace(1,0, num=25)
+add_source(tab, t50, 11. + mags, 0.1 + np.zeros(50), -2701, 'IRAC2')
+
 
 mags = np.ones(50)
 mags[25:] = -1
-add_source(tab, t50, 12. + mags, 0.1 + np.zeros(50), -2701, 'IRAC1')
-add_source(tab, t50, 13. + mags, 0.1 + np.zeros(50), -2701, 'IRAC2')
+add_source(tab, t50, 12. + mags, 0.1 + np.zeros(50), -2702, 'IRAC1')
+add_source(tab, t50, 13. + mags, 0.1 + np.zeros(50), -2702, 'IRAC2')
+
+#add some datapoint in each band that war not cross-matched
+add_source(tab, np.hstack([[55490,55495,55498], t50]), np.hstack([[1.,2,3,], 12. + mags]), np.hstack([[1., 0.0001,0.00001], 0.1 + np.zeros(50)]), -2703, 'IRAC1')
+add_source(tab, np.hstack([[55492,55496.5,55496.6], t50]), np.hstack([[15.,16,17,], 13. + mags]), np.hstack([[1., 0.0001,0.00001], 0.1 + np.zeros(50)]), -2703, 'IRAC2')
+
+add_source(tab, t50, 12. - mags, 0.1 + np.zeros(50), -2704, 'IRAC1')
+add_source(tab, t50, 13. + mags, 0.1 + np.zeros(50), -2704, 'IRAC2')
 
 
 #### output the stuff
