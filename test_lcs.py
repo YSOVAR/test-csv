@@ -41,17 +41,21 @@ for name, dtype in zip (csvcols, coltype):
 
 # create a few dummy times, that look OK that can be reused, when time
 # does not matter
+t4 = 55300.5 + np.arange(4)
 t5 = 55300.5 + np.arange(5)
+t6 = 55300.5 + np.arange(6)
 t50 = 55500.2 + np.arange(50)
 
 
 ### check min, max, etc.
 ### source numbers begin with -1000
-add_source(tab, t5, [12.,12.,12.,12.,12.], [.1,.1,.1,.1,.1], -1000, "IRAC1")
-add_source(tab, t5, [12.,12.,12.,12.,12.], [.1,.1,.1,.1,.1], -1001, "IRAC2")
+add_source(tab, t4, [12.,12.,12.,12.], [.1,.1,.1,.1], -998, "IRAC1")
+add_source(tab, t5, [12.,12.,12.,12.,12.], [.1,.1,.1,.1,.1], -999, "IRAC1")
+add_source(tab, t6, [12.,12.,12.,12.,12.,12.], [.1,.1,.1,.1,.1,.1], -1000, "IRAC1")
+add_source(tab, t6, [12.,12.,12.,12.,12.,12.], [.1,.1,.1,.1,.1,.1], -1001, "IRAC2")
 
-add_source(tab, t5, [13.,12.5,12.,11.5,11.], [.1,.1,.1,.1,.1], -1002, "IRAC1")
-add_source(tab, t5, [13.,12.5,12.,11.5,11.], [.1,.1,.1,.1,.1], -1003, "IRAC2")
+add_source(tab, t6, [13.,12.5,12.,11.5,11.,12.], [.1,.1,.1,.1,.1,.1], -1002, "IRAC1")
+add_source(tab, t6, [13.,12.5,12.,11.5,11.,12.], [.1,.1,.1,.1,.1,.1], -1003, "IRAC2")
 
 ### testing periodicity finding
 t100 = 55500. + np.arange(100) + random(100)

@@ -40,13 +40,32 @@ One-color statistics
 We generated several very short and simple lightcurves for different sources,
 that have entries in one band only.
 
+Which lightcurves make the cut?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We ignore lightcurves below a certain number of datapoints. To check
+that this rejection works, here are a few (constant) lightcurves with
+few datapoints.
+
+============= ====================
+Source number number of datapoints  
+============= ====================
+- 998         4
+- 999         5
+-1000         6 
+============= ====================
+
+All other lightcurves in the simulated dataset have 6 or more
+datapoints (most have 50 or 100 datapoints).
+
+
 constant lightcurves
 ^^^^^^^^^^^^^^^^^^^^
+
 These are two lightcurves that have identical entires, one of them tests the IRAC1 channel,
 the other one the IRAC2 channel.
 The followinf statistics should be compared:
 
-- number of entries = 5 in the band chosen
+- number of entries = 6 in the band chosen
 - max = 12
 - min = 12 
 - median = 12
@@ -68,14 +87,14 @@ simple lightcurves
 These two lightcurves have identical entries again.
 The following statistics should be compared:
 
-- number of entries = 5 in the band chosen
+- number of entries = 6 in the band chosen
 - max = 13
 - min = 11 
 - median = 12
 - weighted mean = 12
-- standard deviation = 1/sqrt(2) 
+- standard deviation = sqrt(2.25)/6 = 0.6455
 - median absolute devitation = 0.5
-- reduced chi^2 to mean = 62.5
+- reduced chi^2 to mean = 50.0
 
 ============= ===== ==================
 Source number band  lightcurve  
