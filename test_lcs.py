@@ -1,7 +1,13 @@
-import sys
+import argparse
+
 import numpy as np
 from numpy.random import random
 import astropy.table as table
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("outfile", help="Filename of output file that will contain test lightcurves in csv format")
+args = parser.parse_args()
 
 
 csvcols = ["ysovarid","sname","ra","de","hmjd","fname","mag1","emag1","useful","kind","note"]
@@ -45,6 +51,7 @@ t4 = 55300.5 + np.arange(4)
 t5 = 55300.5 + np.arange(5)
 t6 = 55300.5 + np.arange(6)
 t50 = 55500.2 + np.arange(50)
+t100 = 55500.2 + np.arange(100)
 
 
 ### check min, max, etc.
@@ -56,6 +63,10 @@ add_source(tab, t6, [12.,12.,12.,12.,12.,12.], [.1,.1,.1,.1,.1,.1], -1001, "IRAC
 
 add_source(tab, t6, [13.,12.5,12.,11.5,11.,12.], [.1,.1,.1,.1,.1,.1], -1002, "IRAC1")
 add_source(tab, t6, [13.,12.5,12.,11.5,11.,12.], [.1,.1,.1,.1,.1,.1], -1003, "IRAC2")
+add_source(tab, t100, np.linspace(13., 11., num=100), [.082886] * 100, -1004, "IRAC1")
+
+### lightcurve that would show if  mag and error are reordered differently
+add_source(tab, t6, [12.,13.,10.,15.,8.,17.], [1., 1.,2.,3.,4.,5.], -1010, "IRAC1")
 
 ### testing periodicity finding
 t100 = 55500. + np.arange(100) + random(100)
@@ -79,7 +90,7 @@ t_2000[25:] = t50[25:] + 0.06 + random(25)*0.3
 add_source(tab, t_2000, 12. + random(50), random(50), -2000, 'IRAC2')
 
 add_source(tab, t50, 12.+ random(50), random(50), -2001, 'IRAC1')
-add_source(tab, t50 + (random(50)*0.16)-0.01, 12.+ random(50), random(50), -2001, 'IRAC2')
+add_source(tab, t50 + (random(50)*0.016)-0.008, 12.+ random(50), random(50), -2001, 'IRAC2')
 
 add_source(tab, t50, 12.+ random(50), random(50), -2002, 'IRAC1')
 add_source(tab, t50 + np.linspace(-0.049, +0.049), 12.+ random(50), random(50), -2002, 'IRAC2')
@@ -113,7 +124,7 @@ mags[25:] = -1
 add_source(tab, t50, 12. + mags, 0.1 + np.zeros(50), -2702, 'IRAC1')
 add_source(tab, t50, 13. + mags, 0.1 + np.zeros(50), -2702, 'IRAC2')
 
-#add some datapoint in each band that war not cross-matched
+#add some datapoint in each band that was not cross-matched
 add_source(tab, np.hstack([[55490,55495,55498], t50]), np.hstack([[1.,2,3,], 12. + mags]), np.hstack([[1., 0.0001,0.00001], 0.1 + np.zeros(50)]), -2703, 'IRAC1')
 add_source(tab, np.hstack([[55492,55496.5,55496.6], t50]), np.hstack([[15.,16,17,], 13. + mags]), np.hstack([[1., 0.0001,0.00001], 0.1 + np.zeros(50)]), -2703, 'IRAC2')
 
@@ -125,7 +136,7 @@ add_source(tab, t50, 13. + mags, 0.1 + np.zeros(50), -2704, 'IRAC2')
 
 import csv
 
-with open(sys.argv[1], 'wb') as csvfile:
+with open(args.outfile, 'wb') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
     writer.writerow(tab.colnames)
     for i in range(len(tab)):

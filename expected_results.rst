@@ -87,21 +87,40 @@ simple lightcurves
 These two lightcurves have identical entries again.
 The following statistics should be compared:
 
-- number of entries = 6 in the band chosen
+- number of entries = 6 in the band chosen for -1002 and -1003, 100 for -1004
 - max = 13
 - min = 11 
 - median = 12
 - weighted mean = 12
-- standard deviation = 1./sqrt(2) = 0.7071 (taking dof = 1)
-- median absolute devitation = 0.5
-- reduced chi^2 to mean = 50.0
+- standard deviation = 1./sqrt(2) = 0.7071 (taking dof = 1)  (*not for -1004*)
+- median absolute devitation = 0.5  (*not for -1004*)
+- reduced chi^2 to mean = 50.0 (*only approximate for -1004*)
+- 10%-90% spread of the distribution = 1.6 (*only for -1004* - depending on how
+  your algorithm treats the values on the boundaries, this might vary +- 0.02)
 
 ============= ===== ==================
 Source number band  lightcurve  
 ============= ===== ==================
 -1002         IRAC1 linear brightening
 -1003         IRAC2 linear brightening
+-1004         IRAC1 linear brightening
 ============= ===== ==================
+
+lightcurve that would show if mag and error are reordered
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This lightcurve would show if errors are messed up with respect to the times.
+Thus, most important is a comparison for quantities that depend on both,
+magnitude and error:
+
+- reduced chi^2 to mean = 0.9665139
+- weighted mean = 12.31796
+
+============= ===== ==================
+Source number band  lightcurve  
+============= ===== ==================
+-1010         IRAC1 jumps up and down
+============= ===== ==================
+
 
 Periodicity
 -----------
